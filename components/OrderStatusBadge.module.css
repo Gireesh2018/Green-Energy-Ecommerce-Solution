@@ -1,0 +1,34 @@
+.statusBadge {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.pending {
+  background-color: color-mix(in srgb, var(--warning) 15%, transparent);
+  color: var(--warning);
+  border-color: color-mix(in srgb, var(--warning) 20%, transparent);
+}
+
+.processing {
+  background-color: color-mix(in srgb, var(--info) 15%, transparent);
+  color: var(--info);
+  border-color: color-mix(in srgb, var(--info) 20%, transparent);
+}
+
+.shipped {
+  background-color: color-mix(in srgb, var(--secondary) 15%, transparent);
+  color: var(--secondary);
+  border-color: color-mix(in srgb, var(--secondary) 20%, transparent);
+}
+
+.delivered {
+  background-color: color-mix(in srgb, var(--success) 15%, transparent);
+  color: var(--success);
+  border-color: color-mix(in srgb, var(--success) 20%, transparent);
+}
+
+.cancelled {
+  background-color: color-mix(in srgb, var(--error) 15%, transparent);
+  color: var(--error);
+  border-color: color-mix(in srgb, var(--error) 20%, transparent);
+}

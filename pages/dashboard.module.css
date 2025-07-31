@@ -1,0 +1,245 @@
+.dashboardLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.mobileHeader {
+  display: none;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+}
+
+.menuButton {
+  color: var(--foreground);
+}
+
+.mobileTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.sidebar {
+  flex-shrink: 0;
+}
+
+.mainContent {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--background);
+}
+
+.contentSection {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-6);
+  min-height: 100%;
+}
+
+.contentHeader {
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+  padding: var(--spacing-6) 0;
+}
+
+.contentTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-2) 0;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contentDescription {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.overviewContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.periodSelector {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  justify-content: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.periodLabel {
+  font-weight: 500;
+  color: var(--foreground);
+  font-size: 0.9375rem;
+}
+
+.periodSelect {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: border-color var(--animation-duration-fast) ease;
+}
+
+.periodSelect:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.analyticsSection {
+  width: 100%;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+}
+
+.recentOrdersCard,
+.wishlistCard {
+  height: fit-content;
+}
+
+.profileSection {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 767px) {
+  .dashboardLayout {
+    flex-direction: column;
+  }
+  
+  .mobileHeader {
+    display: flex;
+  }
+  
+  .mainContent {
+    flex: 1;
+  }
+  
+  .contentSection {
+    padding: var(--spacing-4);
+  }
+  
+  .contentTitle {
+    font-size: 2rem;
+  }
+  
+  .contentDescription {
+    font-size: 1rem;
+  }
+  
+  .periodSelector {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contentTitle {
+    font-size: 1.75rem;
+  }
+  
+  .contentHeader {
+    padding: var(--spacing-4) 0;
+  }
+  
+  .overviewContent {
+    gap: var(--spacing-4);
+  }
+  
+  .cardsGrid {
+    gap: var(--spacing-4);
+  }
+}
+
+/* Dark mode enhancements */
+:global(.dark) .contentTitle {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:global(.dark) .periodSelect {
+  background-color: var(--surface);
+  border-color: var(--border);
+}
+
+:global(.dark) .mobileHeader {
+  background-color: var(--surface);
+  border-bottom-color: var(--border);
+}
+
+/* Responsive sidebar behavior */
+@media (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+}
+
+/* Smooth transitions */
+.mainContent {
+  transition: margin-left var(--animation-duration-normal) ease;
+}
+
+/* Focus management */
+.mainContent:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .contentTitle {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: var(--foreground);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mainContent,
+  .periodSelect {
+    transition: none;
+  }
+}

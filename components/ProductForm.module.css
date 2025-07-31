@@ -1,0 +1,37 @@
+.dialogContent {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-8);
+  color: var(--muted-foreground);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+}
+
+/* Single column layout for smaller screens */
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dialogContent {
+    max-width: 95vw;
+    margin: var(--spacing-4);
+  }
+}

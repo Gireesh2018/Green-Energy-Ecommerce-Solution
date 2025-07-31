@@ -1,0 +1,31 @@
+.dialogContent {
+  max-width: 500px;
+}
+
+.headerContent {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: flex-start;
+}
+
+.warningIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--warning);
+  flex-shrink: 0;
+  margin-top: var(--spacing-1);
+}
+
+.warningMessage {
+  padding: var(--spacing-4);
+  background-color: color-mix(in srgb, var(--warning) 10%, transparent);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--warning);
+}
+
+.warningMessage p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  line-height: 1.5;
+}

@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-top: var(--spacing-6);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.infoText {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.pageButton {
+  min-width: 2.5rem;
+}
+
+.buttonIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.pageNumbers {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin: 0 var(--spacing-2);
+}
+
+.pageNumberButton {
+  min-width: 2.5rem;
+}
+
+.ellipsis {
+  padding: 0 var(--spacing-2);
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: stretch;
+  }
+
+  .info {
+    justify-content: center;
+  }
+
+  .controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pageNumbers {
+    margin: 0;
+  }
+
+  .pageButton,
+  .pageNumberButton {
+    min-width: 2rem;
+    padding: 0 var(--spacing-2);
+  }
+}

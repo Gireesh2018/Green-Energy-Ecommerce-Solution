@@ -1,0 +1,12 @@
+.pageContainer {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Ensure proper spacing and layout */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 0;
+  }
+}

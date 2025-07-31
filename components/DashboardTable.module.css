@@ -1,0 +1,127 @@
+.container {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--surface);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.count {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+.emptyState {
+  padding: var(--spacing-12);
+  text-align: center;
+}
+
+.emptyMessage {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.thead {
+  background-color: var(--surface);
+}
+
+.th {
+  padding: var(--spacing-4) var(--spacing-6);
+  text-align: left;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-size: 0.75rem;
+}
+
+.tbody {
+  background-color: var(--card);
+}
+
+.tr {
+  transition: background-color var(--animation-duration-fast) ease;
+}
+
+.tr:hover {
+  background-color: var(--surface);
+}
+
+.td {
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--border);
+  color: var(--card-foreground);
+  vertical-align: middle;
+}
+
+.tr:last-child .td {
+  border-bottom: none;
+}
+
+.noData {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+
+  .th,
+  .td {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .table {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Dark mode adjustments */
+:global(.dark) .thead {
+  background-color: var(--surface);
+}
+
+:global(.dark) .tr:hover {
+  background-color: color-mix(in srgb, var(--surface) 50%, transparent);
+}

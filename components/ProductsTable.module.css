@@ -1,0 +1,337 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+
+.createButton {
+  flex-shrink: 0;
+}
+
+.filtersSection {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.searchInput {
+  padding-left: calc(var(--spacing-3) * 2 + 1rem);
+}
+
+.filterToggle {
+  flex-shrink: 0;
+}
+
+.filtersContainer {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+  padding: var(--spacing-4);
+  background-color: var(--muted);
+  border-radius: var(--radius);
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  min-width: 200px;
+}
+
+.filterInput {
+  min-width: 200px;
+}
+
+.tableContainer {
+  position: relative;
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color-mix(in srgb, var(--card) 80%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-content);
+}
+
+.loadingSpinner {
+  padding: var(--spacing-4);
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--foreground);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: var(--muted);
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: background-color var(--animation-duration-fast) ease;
+}
+
+.sortableHeader:hover {
+  background-color: color-mix(in srgb, var(--muted) 90%, var(--primary) 10%);
+}
+
+.sortIndicator {
+  margin-left: var(--spacing-1);
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--animation-duration-fast) ease;
+}
+
+.tableRow:hover {
+  background-color: var(--muted);
+}
+
+.table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  vertical-align: top;
+}
+
+.productImage {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.productTitle {
+  font-weight: 500;
+  color: var(--foreground);
+  line-height: 1.4;
+}
+
+.productDescription {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.3;
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.dpPrice {
+  font-weight: 600;
+  color: var(--price-color);
+}
+
+.mrpPrice {
+  font-size: 0.875rem;
+  color: var(--mrp-color);
+  text-decoration: line-through;
+}
+
+.stockBadge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.stockGood {
+  background-color: color-mix(in srgb, var(--stock-available) 15%, transparent);
+  color: var(--stock-available);
+}
+
+.stockLow {
+  background-color: color-mix(in srgb, var(--stock-low) 15%, transparent);
+  color: var(--stock-low);
+}
+
+.stockOut {
+  background-color: color-mix(in srgb, var(--stock-out) 15%, transparent);
+  color: var(--stock-out);
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.active {
+  background-color: color-mix(in srgb, var(--success) 15%, transparent);
+  color: var(--success);
+}
+
+.inactive {
+  background-color: color-mix(in srgb, var(--muted-foreground) 15%, transparent);
+  color: var(--muted-foreground);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.deleteButton:hover {
+  color: var(--error);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.pageInfo {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+  color: var(--muted-foreground);
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  padding: var(--spacing-8);
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtersSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtersContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .table th,
+  .table td {
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .productImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+}

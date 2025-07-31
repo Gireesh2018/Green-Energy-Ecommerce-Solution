@@ -1,0 +1,138 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  background: var(--gradient-primary);
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.loginCard {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-8);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--border);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.logoIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.companyName {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  color: var(--muted-foreground);
+  font-size: 0.9375rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.formContainer {
+  margin-bottom: var(--spacing-6);
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border);
+}
+
+.footerText {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-2);
+  }
+  
+  .loginCard {
+    padding: var(--spacing-6);
+    max-width: 100%;
+  }
+  
+  .companyName {
+    font-size: 1.5rem;
+  }
+  
+  .logoIcon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Dark mode enhancements */
+:global(.dark) .container {
+  background: linear-gradient(135deg, hsl(210, 15%, 12%), hsl(210, 15%, 18%));
+}
+
+:global(.dark) .loginCard {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 
+    var(--shadow-lg),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+:global(.dark) .logoIcon {
+  box-shadow: 
+    var(--shadow-md),
+    0 0 20px rgba(72, 187, 120, 0.3);
+}

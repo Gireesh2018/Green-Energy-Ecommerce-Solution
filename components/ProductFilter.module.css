@@ -1,0 +1,197 @@
+.filterSidebar {
+  width: 280px;
+  background-color: var(--sidebar);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-4));
+  max-height: calc(100vh - var(--header-height) - var(--spacing-8));
+  align-self: flex-start;
+}
+
+.filterContent {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-4);
+  gap: var(--spacing-4);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-2);
+}
+
+.filterHeader h3 {
+  font-family: var(--font-family-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--sidebar-foreground);
+}
+
+.clearButton {
+  font-size: 0.875rem;
+  color: var(--primary);
+  padding: 0;
+  height: auto;
+}
+
+.closeButton {
+  display: none;
+}
+
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: var(--sidebar-foreground);
+}
+
+.sectionHeader h4 {
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding-left: var(--spacing-1);
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  cursor: pointer;
+  font-size: 0.9375rem;
+  color: var(--sidebar-foreground);
+}
+
+.count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.priceRangeContainer {
+  padding: var(--spacing-2) var(--spacing-1);
+}
+
+.priceInputs {
+  margin-top: var(--spacing-4);
+}
+
+.priceDisplay {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--sidebar-foreground);
+}
+
+.tagsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding-left: var(--spacing-1);
+}
+
+/* Mobile styles */
+.mobileFilterButton {
+  margin-bottom: var(--spacing-4);
+  width: 100%;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  width: 100%;
+  justify-content: center;
+}
+
+.activeFiltersBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--radius-full);
+  padding: 0 var(--spacing-1);
+  margin-left: var(--spacing-2);
+}
+
+.mobileFilterPanel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn var(--animation-duration-normal) ease;
+}
+
+.mobileFilterPanel .filterContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mobileFilterPanel .closeButton {
+  display: block;
+}
+
+.mobileFilterActions {
+  display: flex;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-top: 1px solid var(--border);
+  background-color: var(--card);
+}
+
+.mobileFilterActions button {
+  flex: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .filterSidebar {
+    width: 100%;
+    position: static;
+    max-height: none;
+    margin-bottom: var(--spacing-4);
+  }
+}
